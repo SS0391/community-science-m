@@ -1,0 +1,78 @@
+/* Light mode */
+:root,
+.light {
+  --bg-primary: #f6f1e7;
+  --bg-secondary: #ebe2d0;
+  --bg-elevated: #fffdf9;
+  --text-primary: #241f1a;
+  --text-secondary: #594f45;
+  --text-inverse: #f6f1e7;
+  --accent-primary: #2d4f3e;
+  --accent-secondary: #9c7a3c;
+  --accent-hover: #1e362a;
+  --border-subtle: rgba(156, 122, 60, 0.35);
+  --border-strong: #9c7a3c;
+  --glow-amber: 0 4px 12px rgba(156, 122, 60, 0.25);
+  --font-heading: "Cinzel", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Dark mode */
+.dark {
+  --bg-primary: #090d16;
+  --bg-secondary: #121a2b;
+  --bg-elevated: #19243b;
+  --text-primary: #e8f1f8;
+  --text-secondary: #94a8c4;
+  --text-inverse: #090d16;
+  --accent-primary: #00e5ff;
+  --accent-secondary: #f59e0b;
+  --accent-hover: #38bdf8;
+  --border-subtle: rgba(0, 229, 255, 0.22);
+  --border-strong: #00e5ff;
+  --glow-amber: 0 0 18px rgba(245, 158, 11, 0.5);
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
