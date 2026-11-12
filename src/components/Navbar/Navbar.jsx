@@ -25,7 +25,7 @@ export default function Navbar() {
             <span>{theme === "light" ? "Light" : "Dark"}</span>
           </button>
           <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
-            <span className={styles.menuLabel}>Menu</span>
+            <span className={styles.menuLabel}></span>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
