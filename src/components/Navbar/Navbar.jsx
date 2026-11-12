@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Imports of styles
-import styles from "./Navbar/Navbar.module.css";
-import { Landmark, Menu } from "lucide-react";
+import styles from "./Navbar.module.css";
+import { Landmark, Menu, X, Clock, MapPin } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,11 +13,11 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <Link to="/" className={styles.logo} onclick={closeMenu}>
+        <Link to="/" className={styles.logo} onClick={closeMenu}>
           <Landmark size={26} />
           <span>Community Science Museum</span>
         </Link>
-        <button className={styles.menuBtn} onclick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
+        <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
           <span className={styles.menuLabel}>Menu</span>
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
