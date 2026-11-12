@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <Link to="/" className={styles.logo}>
             <Landmark size={24} />
-            <span>Community Science Museum</span>
+            <span>C S M</span>
           </Link>
           <p className={styles.tagline}>Utforsk fortidens mysterier, jordens giganter og universets yttergrenser midt i hjertet av Bergen.</p>
         </div>
@@ -45,11 +45,11 @@ export default function Footer() {
           </p>
           <p className={styles.infoRow}>
             <Phone size={16} />
-            <span>+47 55 12 34 56</span>
+            <span>+47 00 00 00 00</span>
           </p>
           <p className={styles.infoRow}>
             <Mail size={16} />
-            <span>post@sciencemuseum.no</span>
+            <span>post@sciencemuseum.fake</span>
           </p>
         </div>
         <div className={styles.bottomBar}>
