@@ -3,10 +3,10 @@ import { createContext, useContext, useState, useEffect } from "react";
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => localStorage.getItem("museum-theme"));
+  const [theme, setTheme] = useState(() => localStorage.getItem("museum-theme") || "light");
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.className = theme;
     localStorage.setItem("museum-theme", theme);
   }, [theme]);
 

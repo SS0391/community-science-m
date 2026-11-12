@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext/ThemeContext.jsx";
 
 // Imports of styles
 import styles from "./Navbar.module.css";
-import { Landmark, Menu, X, Clock, MapPin } from "lucide-react";
+import { Landmark, Menu, X, Clock, MapPin, Moon, Sun } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { theme, toggleTheme } = useTheme();
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -17,10 +18,17 @@ export default function Navbar() {
           <Landmark size={26} />
           <span>Community Science Museum</span>
         </Link>
-        <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
-          <span className={styles.menuLabel}>Menu</span>
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+
+        <div className={styles.navActions}>
+          <button className={styles.themeBtn} onClick={toggleTheme} aria-label={theme === "light" ? "Light" : "Dark"}>
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            <span>{theme === "light" ? "Light" : "Dark"}</span>
+          </button>
+          <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
+            <span className={styles.menuLabel}>Menu</span>
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </nav>
       {menuOpen && (
         <div className={styles.dropdown}>
