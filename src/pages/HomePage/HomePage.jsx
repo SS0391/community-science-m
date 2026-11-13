@@ -1,3 +1,9 @@
+import HeroCarousell from "../../components/HeroCarousel/HeroCarousel.jsx";
+
 export default function Home() {
-  <h1>Her kommer home</h1>;
+  return (
+    <div>
+      <HeroCarousell />
+    </div>
+  );
 }
