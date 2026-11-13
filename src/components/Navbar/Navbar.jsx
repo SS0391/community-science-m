@@ -20,10 +20,6 @@ export default function Navbar() {
         </Link>
 
         <div className={styles.navActions}>
-          <button className={styles.themeBtn} onClick={toggleTheme} aria-label={theme === "light" ? "Light" : "Dark"}>
-            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
-            <span>{theme === "light" ? "Dark" : "Light"}</span>
-          </button>
           <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
             <span className={styles.menuLabel}></span>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -37,18 +33,18 @@ export default function Navbar() {
               <h3>Utstillinger & Nyheter</h3>
               <ul>
                 <li>
-                  <Link to="/dinosaur" onClick={closeMenu}>
-                    Dinosaurer
+                  <Link to="/exhibits" onClick={closeMenu}>
+                    Utstillinger
                   </Link>
                 </li>
                 <li>
-                  <Link to="/verdensrommet" onClick={closeMenu}>
-                    Verdensrommet
+                  <Link to="/news" onClick={closeMenu}>
+                    Nyheter
                   </Link>
                 </li>
                 <li>
-                  <Link to="/arkeologi" onClick={closeMenu}>
-                    Arkeologi
+                  <Link to="/events" onClick={closeMenu}>
+                    Kommende
                   </Link>
                 </li>
               </ul>
@@ -58,13 +54,18 @@ export default function Navbar() {
               <h3>Praktisk informasjon</h3>
               <ul>
                 <li>
-                  <Link to="/faq" onClick={closeMenu}>
-                    FAQ – Ofte stilte spørsmål
+                  <Link to="/guides" onClick={closeMenu}>
+                    Våre guider
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kontakt" onClick={closeMenu}>
+                  <Link to="/contact" onClick={closeMenu}>
                     Kontakt oss
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login" onClick={closeMenu}>
+                    Login / Min Side
                   </Link>
                 </li>
               </ul>
@@ -80,6 +81,10 @@ export default function Navbar() {
                 <MapPin size={16} />
                 <span>1007 Mountain Drive, Gotham City</span>
               </p>
+              <button className={styles.themeBtn} onClick={toggleTheme} aria-label={theme === "light" ? "Light" : "Dark"}>
+                {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+                <span>{theme === "light" ? "Dark" : "Light"}</span>
+              </button>
             </div>
           </div>
         </div>
