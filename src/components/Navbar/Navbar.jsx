@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className={styles.navActions}>
           <button className={styles.themeBtn} onClick={toggleTheme} aria-label={theme === "light" ? "Light" : "Dark"}>
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
-            <span>{theme === "light" ? "Light" : "Dark"}</span>
+            <span>{theme === "light" ? "Dark" : "Light"}</span>
           </button>
           <button className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close Menu" : "Open Menu"} aria-expanded={menuOpen}>
             <span className={styles.menuLabel}></span>

@@ -52,9 +52,9 @@ export default function Footer() {
             <span>post@sciencemuseum.fake</span>
           </p>
         </div>
-        <div className={styles.bottomBar}>
-          <p>© {new Date().getFullYear()} Community Science Museum Bergen. Alle rettigheter reservert.</p>
-        </div>
+      </div>
+      <div className={styles.bottomBar}>
+        <p>© {new Date().getFullYear()} Community Science Museum Bergen. Alle rettigheter reservert.</p>
       </div>
     </footer>
   );
