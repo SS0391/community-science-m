@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext/ThemeContext.jsx";
-
+import { Landmark, Menu, X, Clock, MapPin, Moon, Sun } from "lucide-react";
 // Imports of styles
 import styles from "./Navbar.module.css";
-import { Landmark, Menu, X, Clock, MapPin, Moon, Sun } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
