@@ -15,8 +15,8 @@ export default function ArticleCard() {
         setLoading(true);
         const [spaceData, archData] = await Promise.all([fetchSpaceNews(2), fetchArchaeology(2)]);
 
-        const spaceHighlight = spaceData || spaceData;
-        const archHighlight = archData || archData;
+        const spaceHighlight = spaceData.at(1) || spaceData.at(0);
+        const archHighlight = archData.at(1) || archData.at(0);
 
         const featured = [
           {
