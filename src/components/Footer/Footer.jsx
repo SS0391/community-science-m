@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.bottomBar}>
-        <p>© {new Date().getFullYear()} Community Science Museum Bergen. Alle rettigheter reservert.</p>
+        <p>© {new Date().getFullYear()} Community Science Museum Bergen. Alle rettigheter reservert. Laget for å lære!!</p>
       </div>
     </footer>
   );
