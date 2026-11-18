@@ -62,11 +62,13 @@ export default function Navbar() {
                     Kontakt oss
                   </Link>
                 </li>
-                <li>
-                  <Link to="/login" onClick={closeMenu}>
-                    Login / Min Side
+                {/* <li>
+                  <Link to="/booking" onClick={closeMenu}>
+                    Booking
                   </Link>
-                </li>
+                </li> 
+                Kommer mer senere
+                */}
               </ul>
             </div>
 

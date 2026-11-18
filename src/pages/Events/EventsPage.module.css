@@ -1,0 +1,247 @@
+.eventsSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.header {
+  max-width: 720px;
+  margin-bottom: 2.25rem;
+}
+
+.subBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filterBtn,
+.activeFilter {
+  padding: 0.6rem 1.15rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-secondary);
+}
+
+.activeFilter {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-amber);
+}
+
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.eventCard {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.eventCard:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--glow-amber);
+}
+
+.imageBox {
+  position: relative;
+  height: 100%;
+  min-height: 260px;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryTag {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  background-color: rgba(9, 13, 22, 0.85);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 5px;
+}
+
+.cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.topMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dateHighlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent-secondary);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.spotsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+}
+
+.cardContent h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.detailsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.detailsGrid p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.detailsGrid svg {
+  color: var(--accent-primary);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.registerBtn,
+.registeredBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  transition: all 0.2s ease;
+}
+
+.registerBtn {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.registerBtn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.registeredBtn {
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+}
+
+.guideLink {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.guideLink:hover {
+  color: var(--accent-primary);
+}
+
+@media (max-width: 820px) {
+  .eventCard {
+    grid-template-columns: 1fr;
+  }
+
+  .imageBox {
+    height: 220px;
+  }
+}
