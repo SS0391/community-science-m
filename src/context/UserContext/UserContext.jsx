@@ -50,4 +50,15 @@ export function UserProvider({ children }) {
     setUser({ name, email, school });
     return { success: true };
   };
+
+  // give user oppertunity to login with email and password
+
+  const loginUser = (email, password) => {
+    const found = registerdUsers.find((u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
+    if (!found) {
+      return { success: false, message: "Wrong password or email" };
+    }
+
+    setUser();
+  };
 }
