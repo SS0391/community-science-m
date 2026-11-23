@@ -34,7 +34,7 @@ export function UserProvider({ children }) {
   }, [user]);
 
   useEffect(() => {
-    localStorage.getItem("csm-bookings", JSON.stringify(bookings));
+    localStorage.setItem("csm-bookings", JSON.stringify(bookings));
   }, [bookings]);
 
   // registrate user
