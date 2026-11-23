@@ -58,7 +58,12 @@ export function UserProvider({ children }) {
     if (!found) {
       return { success: false, message: "Wrong password or email" };
     }
+    // find user ids(name, email) and password...
+    setUser({ name: found.name, email: found.email, school: found.school });
+    return { success: true };
+  };
 
-    setUser();
+  const logoutUser = () => {
+    setUser(null);
   };
 }
