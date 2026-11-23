@@ -43,5 +43,11 @@ export function UserProvider({ children }) {
     if (exists) {
       return { success: false, message: "Email is already registrated" };
     }
+
+    const newUser = { name, email, school, password };
+    // keep the the list of existing user and add a new with prev - ...prev
+    setRegisterdUser((prev) => [...prev, newUser]);
+    setUser({ name, email, school });
+    return { success: true };
   };
 }
