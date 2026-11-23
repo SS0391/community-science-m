@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const userContext = createContext();
 
@@ -7,4 +7,30 @@ export function UserProvider({ children }) {
     const saved = localStorage.getItem("csm-registerd-users");
     return saved ? JSON.parse(saved) : [];
   });
+
+  const [user, setUser] = useState(() => {
+    const saved = localStorage.getItem("csm-user");
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  const [bookings, setBookings] = useState(() => {
+    const saved = localStorage.getItem("csm-bookings");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("csm-registerd-users", JSON.stringify(registerdUsers));
+  }, [registerdUsers]);
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("csm-user", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("csm-user");
+    }
+  }, [user]);
+
+  useEffect(() => {
+    localStorage.getItem("csm-bookings", JSON.stringify(bookings));
+  }, [bookings]);
 }
