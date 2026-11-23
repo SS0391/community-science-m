@@ -1,6 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { User } from "lucide-react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-const userContext = createContext();
+const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [registerdUsers, setRegisterdUser] = useState(() => {
@@ -37,7 +38,7 @@ export function UserProvider({ children }) {
   }, [bookings]);
 
   // registrate user
-
+  // add user / create user
   const registerUsers = ({ name, email, school, password }) => {
     const exists = registerUsers.some((u) => u.email.toLowerCase() === email.toLowerCase());
     if (exists) {
@@ -52,7 +53,7 @@ export function UserProvider({ children }) {
   };
 
   // give user oppertunity to login with email and password
-
+  // Login user
   const loginUser = (email, password) => {
     const found = registerdUsers.find((u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
     if (!found) {
@@ -66,4 +67,22 @@ export function UserProvider({ children }) {
   const logoutUser = () => {
     setUser(null);
   };
+
+  // Booking
+  const addBooking = (booking) => {
+    const newEntry = {
+      id: Date.now(),
+      status: "Bekreftet",
+      ...booking,
+    };
+    setBookings((prev) => [newEntry, ...prev]);
+  };
+
+  const removeBooking = (id) => {
+    setBookings((prev) => prev.filter((b) => b.id !== id));
+  };
+
+  return <UserContext.Provider value={{ user, registerUsers, loginUser, logoutUser, bookings, addBooking, removeBooking }}>{children}</UserContext.Provider>;
 }
+
+export const useUser = () => useContext(UserContext);
