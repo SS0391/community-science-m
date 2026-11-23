@@ -18,6 +18,8 @@ export function UserProvider({ children }) {
     return saved ? JSON.parse(saved) : [];
   });
 
+  // Setup for registrate user using useEffect
+
   useEffect(() => {
     localStorage.setItem("csm-registerd-users", JSON.stringify(registerdUsers));
   }, [registerdUsers]);
@@ -33,4 +35,13 @@ export function UserProvider({ children }) {
   useEffect(() => {
     localStorage.getItem("csm-bookings", JSON.stringify(bookings));
   }, [bookings]);
+
+  // registrate user
+
+  const registerUsers = ({ name, email, school, password }) => {
+    const exists = registerUsers.some((u) => u.email.toLowerCase() === email.toLowerCase());
+    if (exists) {
+      return { success: false, message: "Email is already registrated" };
+    }
+  };
 }
